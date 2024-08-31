@@ -2,6 +2,7 @@
   "name": "ultimate-guide-to-testing-react-apps",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.12",
@@ -46,11 +47,16 @@
     "@testing-library/react": "^16.0.1",
     "jest": "^27.5.1"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "jest": {
     "coverageThreshold": {
-        "global": {
-            "lines": 80
-        }
+      "global": {
+        "lines": 80
+      }
     }
-}
+  }
 }
