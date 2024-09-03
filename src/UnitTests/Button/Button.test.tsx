@@ -12,7 +12,7 @@ describe('Button component', () => {
         });
 
         expect(element).toBeInTheDocument();
-    })
+    });
 
     test('should be disabled', () => {
         const handleClick = jest.fn();
@@ -24,7 +24,7 @@ describe('Button component', () => {
         expect(element).toBeDisabled();
         
         expect(handleClick).toHaveBeenCalledTimes(0);
-    })
+    });
 
     test('should be loading', () => {
         render(<Button onClick={() => { }} loading>Test Button</Button>);
@@ -32,7 +32,7 @@ describe('Button component', () => {
 
         expect(element).toBeDisabled();
         expect(element).toHaveTextContent('Loading ...')
-    })
+    });
 
     test('should activate onClick event', () => {
         const handleClick = jest.fn();
@@ -42,7 +42,7 @@ describe('Button component', () => {
         fireEvent.click(element);
 
         expect(handleClick).toHaveBeenCalledTimes(1);
-    })
+    });
 
     test('should have a specific type: submit', () => {
         render(<Button type="submit">Submit</Button>);
@@ -50,4 +50,4 @@ describe('Button component', () => {
     
         expect(element).toHaveAttribute('type', 'submit');
     });
-})
+});
