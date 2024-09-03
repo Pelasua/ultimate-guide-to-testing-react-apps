@@ -18,8 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll --coverage",
-    "eject": "react-scripts eject",
+    "test": "react-scripts test --watchAll --coverage --detectOpenHandles",
+    "eject": "react-scripts eject", 
     "prepare": "husky"
   },
   "eslintConfig": {
