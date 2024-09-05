@@ -31,7 +31,7 @@ describe('Button component', () => {
         const element = screen.getByRole('button');
 
         expect(element).toBeDisabled();
-        expect(element).toHaveTextContent('Loading ...')
+        expect(element).toHaveTextContent('Loading ...');
     });
 
     test('should activate onClick event', () => {

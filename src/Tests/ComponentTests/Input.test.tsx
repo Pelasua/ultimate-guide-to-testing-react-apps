@@ -11,7 +11,7 @@ describe('Input component', () => {
 
         expect(element).toBeInTheDocument();
 
-        const labelElement = screen.getByText("label")
+        const labelElement = screen.getByText("label");
         
         expect(labelElement).toBeInTheDocument();
     });
@@ -19,7 +19,7 @@ describe('Input component', () => {
     test('should have placeholder', () => {
         render(<Input name='input' placeholder='placeholder' />);
 
-        const element = screen.getByPlaceholderText('placeholder')
+        const element = screen.getByPlaceholderText('placeholder');
 
         expect(element).toBeInTheDocument();
     });

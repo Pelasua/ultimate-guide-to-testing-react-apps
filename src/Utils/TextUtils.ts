@@ -5,6 +5,6 @@ const TextUtils = {
             return letter.toUpperCase();
         });
     }
-}
+};
 
 export default TextUtils;

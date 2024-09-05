@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 interface props extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -21,7 +21,7 @@ function Input({ name, type, disabled, loading, placeholder, testId, label, erro
             }
         </div>
 
-    )
+    );
 }
 
-export default Input
+export default Input;
