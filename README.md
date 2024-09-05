@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# The Ultimate Guide to Testing React Apps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to sharing with the community the various types of tests by developing a React application. The repository is the result of reading different articles, watching some videos and sharing opinions with other devs. **It is not a standard**, so feel free to discuss any part of this repository by creating a PR (in order to improve this guide).
 
-## Available Scripts
+## Setup your project
 
-In the project directory, you can run:
+In most cases, when you create a React app, some testing dependencies are installed automatically. However, if you want to add some of them manually, follow the instructions bellow:
 
-### `npm start`
+### Jest + Testing Library
+\`\`\`
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom     
+\`\`\`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+And if you use TypeScript:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\`\`\`
+npm install --save-dev @types/jest
+\`\`\`
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Let's test!
 
-### `npm run build`
+There are multiple types of tests depending on what you want to test. If you go to the *Tests* folder, you can see all tests organized by type.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Unit tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The tests cover the minimal logic parts of your application. By 'minimal logic parts,' I mean simple functions or hooks that contain specific functionalities that you want to ensure work correctly.
+Use cases:
+- To verify the correct output of a formatting function.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Component tests
 
-### `npm run eject`
+Similar to unit tests, they cover the minimal and reusable component like a custom input, button...
+Use cases:
+- To verify the right rendering of a component.
+- To verify the use of its props.
+- To verify its states and the possibility of changing any of them.
+- To verify the correct styles (styles that are general and applied throughout the app wherever the component is used).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Integration tests
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
