@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ItemList from './ItemList';
+import ItemList from '../../Components/ItemList';
 
 
 describe('ItemList component', () => {

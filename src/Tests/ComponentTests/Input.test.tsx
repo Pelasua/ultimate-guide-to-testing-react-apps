@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Input from './Input';
+import Input from '../../Components/Input';
 
 describe('Input component', () => {
     test("should renders successfully", () => {
