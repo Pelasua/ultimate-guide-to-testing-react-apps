@@ -4,10 +4,10 @@ import '@testing-library/jest-dom';
 import Input from '../../Components/Input';
 
 describe('Input component', () => {
-    test("should renders successfully", () => {
-        render(<Input name='input' label='label' testId='input' />);
+    test("should render successfully", () => {
+        render(<Input name='input' label='label' type='text' />);
 
-        const element = screen.getByTestId("input");
+        const element = screen.getByRole('textbox');
 
         expect(element).toBeInTheDocument();
 
@@ -25,37 +25,37 @@ describe('Input component', () => {
     });
 
     test('should be a password input', () => {
-        render(<Input type='password' testId='input' />);
+        render(<Input placeholder='Password' type='password'role='pass' />);
 
-        const element = screen.getByTestId("input");
+        const element = screen.getByPlaceholderText('Password');
 
         expect(element).toHaveAttribute('type', 'password');
     });
 
     test('should be disabled', () => {
-        render(<Input disabled testId="input" />);
+        render(<Input disabled />);
 
-        const inputElement = screen.getByTestId("input");
+        const element = screen.getByRole('textbox');
 
-        inputElement.focus();
+        element.focus();
 
-        expect(inputElement).not.toHaveFocus();
+        expect(element).not.toHaveFocus();
     });
 
     test('should be loading', () => {
-        render(<Input loading testId="input" />);
+        render(<Input loading />);
+        
+        const element = screen.getByRole('textbox');
 
-        const inputElement = screen.getByTestId("input");
+        element.focus();
 
-        inputElement.focus();
-
-        expect(inputElement).not.toHaveFocus();
+        expect(element).not.toHaveFocus();
     });
 
-    test('should displays an error', () => {
-        render(<Input error='error!' testId="input" />);
+    test('should display an error', () => {
+        render(<Input error='error!' />);
 
-        const element = screen.getByText("error!");
+        const element = screen.getByRole('textbox');
 
         expect(element).toBeInTheDocument();
     });

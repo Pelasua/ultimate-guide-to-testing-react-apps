@@ -24,7 +24,7 @@ describe('ItemList component', () => {
             },
         ];
 
-    test('should renders with data successfully', () => {
+    test('should render with data successfully', () => {
         render(<ItemList data={mockData} />);
 
         expect(screen.getByText(/label 1/i)).toBeInTheDocument();
@@ -32,7 +32,7 @@ describe('ItemList component', () => {
         expect(screen.getByText(/label 3/i)).toBeInTheDocument();
     });
 
-    test('should renders without data successfully', () => {
+    test('should render without data successfully', () => {
         render(<ItemList data={[]} />);
 
         expect(screen.getByText(/No data/i)).toBeInTheDocument();
