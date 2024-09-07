@@ -11,14 +11,16 @@ interface props {
 function ItemList({ data }: props) {
     return (
         <div>
-            <ul>
-                {
-                    data.length > 0 ? data.map((item, index) => (
-                        <li key={'key_' + index}>{item.label}</li>
-                    )): 
+            {
+                data.length > 0 ?
+                    <ul>
+                        {data.map((item, index) => (
+                            <li key={'key_' + index}>{item.label}</li>
+                        ))}
+                    </ul>
+                    :
                     <span>No data</span>
-                }
-            </ul>
+            }
         </div>
     );
 }
