@@ -8,7 +8,7 @@ function SimpleForm() {
   return (
     <div>
       <h2>Digimon search</h2>
-      <Input placeholder='Search the name of the Digimon...' />
+      <Input label='Digimon name' placeholder='Search the name of the Digimon...' />
       <Button>Accept</Button>
 
       <h3>History</h3>

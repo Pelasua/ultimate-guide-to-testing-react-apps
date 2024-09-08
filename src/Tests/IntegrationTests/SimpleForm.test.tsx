@@ -13,6 +13,9 @@ describe('Simple Form Page', () => {
         const input = screen.getByPlaceholderText('Search the name of the Digimon...');
         expect(input).toBeInTheDocument();
 
+        const inputLabel = screen.getByLabelText('Digimon name');
+        expect(inputLabel).toBeInTheDocument();
+
         const acceptButton = screen.getByRole('button', {
             name: 'Accept',
         });
