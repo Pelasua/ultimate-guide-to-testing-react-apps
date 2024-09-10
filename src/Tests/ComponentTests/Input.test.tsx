@@ -59,4 +59,22 @@ describe('Input component', () => {
 
         expect(element).toBeInTheDocument();
     });
+
+    test('should render with error classes succesfully', () => { 
+        render(<Input error='error!' />);
+
+        const element = screen.getByText('error!');
+        
+        expect(element).toHaveClass('text-red-500 text-xs');
+     });
+
+     test('should render with error inline-styles succesfully', () => { 
+        render(<Input error='error!' />);
+
+        const element = screen.getByText('error!');
+        
+        expect(element).toHaveStyle({
+            textDecoration: 'underline'
+        });
+     });
 });

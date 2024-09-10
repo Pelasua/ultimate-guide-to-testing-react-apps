@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 interface props extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -9,14 +9,29 @@ interface props extends React.InputHTMLAttributes<HTMLInputElement> {
 
 
 function Input({ name, type, disabled, loading, placeholder, label, error, }: props) {
+    const [shouldVibrate, setShouldVibrate] = useState(false);
+
+    useEffect(() => {
+     if (error) {
+        setShouldVibrate(true);
+
+        setTimeout(() => {
+          setShouldVibrate(false);
+        }, 500);
+     }
+    }, [error]);
+    
+    
     return (
-        <div>
-            <label>
+        <div className='flex flex-col items-start'>
+            <label className='flex flex-col items-start text-sm gap-1 text-gray-500 w-full'>
                 {label}
-                <input name={name} type={type} disabled={disabled || loading} placeholder={placeholder} />
+                <input name={name} type={type} disabled={disabled || loading} placeholder={placeholder} className={`w-full ${shouldVibrate ? 'animate-vibrate' : ''} ${error ? 'border-solid border border-red-500' : ''}`} />
             </label>
             {error &&
-                <span>{error}</span>
+                <span className='text-red-500 text-xs' style={{
+                    textDecoration: 'underline'
+                }}>{error}</span>
             }
         </div>
 

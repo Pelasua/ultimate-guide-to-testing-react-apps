@@ -50,4 +50,32 @@ describe('Button component', () => {
     
         expect(element).toHaveAttribute('type', 'submit');
     });
+
+    test('should have basic styles', () => { 
+        render(<Button variant='primary'>Button</Button>);
+        const element = screen.getByRole('button', { name: /Button/i });
+
+        expect(element).toHaveClass('rounded-full py-2 px-1 font-semibold');
+     });
+
+     test('should render a primary button', () => { 
+        render(<Button variant='primary'>Button</Button>);
+        const element = screen.getByRole('button', { name: /Button/i });
+
+        expect(element).toHaveClass('bg-blue-400 hover:bg-blue-500 text-white');
+     });
+
+    test('should render a secondary button', () => { 
+        render(<Button variant='secondary'>Button</Button>);
+        const element = screen.getByRole('button', { name: /Button/i });
+
+        expect(element).toHaveClass('bg-green-400 hover:bg-green-500 text-white');
+     });
+
+     test('should render an outline button', () => { 
+        render(<Button variant='outline'>Button</Button>);
+        const element = screen.getByRole('button', { name: /Button/i });
+
+        expect(element).toHaveClass('bg-white hover:bg-blue-400 text-blue-400 hover:text-white border-solid border-2 border-blue-400');
+     });
 });

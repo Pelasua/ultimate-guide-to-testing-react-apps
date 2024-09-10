@@ -10,7 +10,7 @@ describe('Simple Form Page', () => {
         const formTitle = screen.getByText('Digimon search');
         expect(formTitle).toBeInTheDocument();
 
-        const input = screen.getByPlaceholderText('Search the name of the Digimon...');
+        const input = screen.getByPlaceholderText('Search the name...');
         expect(input).toBeInTheDocument();
 
         const inputLabel = screen.getByLabelText('Digimon name');
