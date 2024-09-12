@@ -1,5 +1,5 @@
 import React from 'react';
-import { prettyDOM, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Input from '../../Components/Input';
 
@@ -14,7 +14,7 @@ describe('Input component', () => {
 
             const labelElement = screen.getByText("label");
 
-            expect(labelElement).toBeInTheDocument();
+             expect(labelElement).toBeInTheDocument();
         });
     });
 
