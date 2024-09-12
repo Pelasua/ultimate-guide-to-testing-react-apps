@@ -34,7 +34,6 @@ function Input({ name, type, disabled, loading, placeholder, label, error, }: pr
                 }}>{error}</span>
             }
         </div>
-
     );
 }
 

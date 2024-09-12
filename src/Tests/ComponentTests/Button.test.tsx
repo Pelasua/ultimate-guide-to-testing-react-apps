@@ -4,7 +4,6 @@ import '@testing-library/jest-dom';
 import Button from '../../Components/Button';
 
 describe('Button component', () => {
-
     describe('General renderization', () => {
         test("should render successfully", () => {
             render(<Button onClick={() => { }}>Test Button</Button>);
@@ -85,6 +84,5 @@ describe('Button component', () => {
 
             expect(element).toHaveClass('bg-white hover:bg-blue-400 text-blue-400 hover:text-white border-solid border-2 border-blue-400');
         });
-
     });
 });
