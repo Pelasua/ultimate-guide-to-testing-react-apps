@@ -27,6 +27,6 @@
                 "argsIgnorePattern": "^_"
             }
         ],
-        "no-empty-function": "off",
+        "no-empty-function": "off"
     }
 }

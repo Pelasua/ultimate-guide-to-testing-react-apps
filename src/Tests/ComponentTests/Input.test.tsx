@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Input from '../../Components/Input';
 
@@ -14,7 +14,7 @@ describe('Input component', () => {
 
             const labelElement = screen.getByText("label");
 
-             expect(labelElement).toBeInTheDocument();
+            expect(labelElement).toBeInTheDocument();
         });
     });
 
@@ -61,6 +61,19 @@ describe('Input component', () => {
             const element = screen.getByRole('textbox');
 
             expect(element).toBeInTheDocument();
+        });
+
+        test('should change to a specific value', async () => {
+            const onChangeHandler = jest.fn();
+
+            render(<Input onChange={onChangeHandler} />);
+
+            const element = screen.getByRole('textbox');
+
+            fireEvent.change(element, { target: { value: 'random' } });
+
+            expect(onChangeHandler).toHaveBeenCalledTimes(1);
+            expect(element).toHaveValue('random');
         });
     });
 
