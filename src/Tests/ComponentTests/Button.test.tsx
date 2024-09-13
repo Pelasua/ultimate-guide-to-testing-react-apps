@@ -6,7 +6,7 @@ import Button from '../../Components/Button';
 describe('Button component', () => {
     describe('General renderization', () => {
         test("should render successfully", () => {
-            render(<Button onClick={() => { }}>Test Button</Button>);
+            render(<Button onClick={() => {}}>Test Button</Button>);
 
             const element = screen.getByRole('button', {
                 name: /Test Button/i

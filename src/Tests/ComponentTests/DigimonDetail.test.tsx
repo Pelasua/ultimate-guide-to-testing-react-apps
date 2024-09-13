@@ -1,0 +1,35 @@
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import DigimonDetail from "Components/DigimonDetail";
+
+
+
+describe('DigimonDetail component', () => {
+    describe('Renderization and Props', () => {
+        const props = {
+            src: "src test",
+            name: "Digimon"
+        };
+    
+        beforeEach(() => {
+            render(<DigimonDetail {...props} />);
+        });
+    
+        describe('Renderization and Props', () => {
+            test('should render an image with the correct attributes', () => {
+                const imgElement = screen.getByRole('img');
+                
+                expect(imgElement).toBeInTheDocument();
+                expect(imgElement).toHaveAttribute('src', props.src);
+                expect(imgElement).toHaveAttribute('alt', props.name);
+            });
+    
+            test('should display the digimon name in a span', () => {
+                const nameElement = screen.getByText(props.name, { selector: 'span' });
+                
+                expect(nameElement).toBeInTheDocument();
+                expect(nameElement).toHaveTextContent(props.name);
+            });
+        });
+    });
+});
