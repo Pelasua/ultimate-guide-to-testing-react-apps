@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import Input from '../../Components/Input';
 
 describe('Input component', () => {
-    describe('General renderization', () => {
+    describe('Renderization and Props', () => {
         test("should render successfully", () => {
             render(<Input name='input' label='label' type='text' />);
 
@@ -16,9 +16,7 @@ describe('Input component', () => {
 
             expect(labelElement).toBeInTheDocument();
         });
-    });
 
-    describe('Props', () => {
         test('should have placeholder', () => {
             render(<Input name='input' placeholder='placeholder' />);
 
@@ -132,6 +130,16 @@ describe('Input component', () => {
             await waitFor(() => {
                 expect(screen.getByRole('textbox')).not.toHaveClass('animate-vibrate');
             });
+        });
+
+        test('should restore the input if the user types inside', () => {
+            render(<Input error='error' value={'error vlaue'} />);
+
+            const element = screen.getByRole('textbox');
+
+            fireEvent.change(element, { target: { value: 'random' } });
+
+            expect(element).not.toHaveClass('border-red-500');
         });
     });
 });
