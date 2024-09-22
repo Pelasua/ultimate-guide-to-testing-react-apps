@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-interface DigimonResponseOK {
+export interface DigimonResponseOK {
     img: string;
     name: string;
     level: string;
 }
 
-interface DigimonResponseError {
+export interface DigimonResponseError {
     ErrorMsg: string;
 }
 
@@ -36,7 +36,9 @@ export function useFetch() {
                 if (error.name === "AbortError") {
                     console.log("Cancelled request");
                 } else {
-                    setError(error);
+                    setError({
+                        ErrorMsg: error.msg,
+                    });
                 }
             })
             .finally(() => setLoading(false));
